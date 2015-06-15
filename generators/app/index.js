@@ -115,7 +115,38 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     writing: {
-        widgetFiles: function() {
+        files: function() {
+            var that = this;
+
+            function _appendJsRef() {
+                var ref = 'photonui.' + that.props.widgetName + ' = require("./' + that.props.widgetType.toLowerCase() + '/' + that.props.widgetName.toLowerCase() + '.js");';
+                var content = that.read(that.destinationRoot() + '/src/photonui.js');
+                content = content.replace(/\/\/ *\[generator\]\r?\n?/, ref + '\n// [generator]\n');
+                that.write(that.destinationRoot() + '/src/photonui.js', content);
+            }
+
+            function _appendStyleBaseRef() {
+                var ref = '@import "' + that.props.widgetType.toLowerCase() + '/' + that.props.widgetName.toLowerCase() + '.less";';
+                var content = that.read(that.destinationRoot() + '/less/base/photonui-base.less');
+                content = content.replace(/\/\* *\[generator\] *\*\/\r?\n?/, ref + '\n/* [generator] */\n');
+                that.write(that.destinationRoot() + '/less/base/photonui-base.less', content);
+            }
+
+            function _appendStyleThemeRef() {
+                var ref = '@import "' + that.props.widgetType.toLowerCase() + '/' + that.props.widgetName.toLowerCase() + '.less";';
+                var content = that.read(that.destinationRoot() + '/less/theme-particle/photonui-theme-particle.less');
+                content = content.replace(/\/\* *\[generator\] *\*\/\r?\n?/, ref + '\n/* [generator] */\n');
+                that.write(that.destinationRoot() + '/less/theme-particle/photonui-theme-particle.less', content);
+            }
+
+            function _appendSpecRef(suffix) {
+                var suffix = (suffix) ? '-' + suffix : '';
+                var ref = '<script src="spec/' + that.props.widgetType.toLowerCase() + '/' + that.props.widgetName.toLowerCase() + suffix + '.js"></script>';
+                var content = that.read(that.destinationRoot() + '/test/index.html');
+                content = content.replace(/<!-- *\[generator\] *-->\r?\n?/, ref + '\n        <!-- [generator] -->\n');
+                that.write(that.destinationRoot() + '/test/index.html', content);
+            }
+
             if (this.props.widgetSuperClass == 'Widget' || this.props.widgetSuperClass == 'Base') {
                 this.superClassPath = '../' + this.props.widgetSuperClass.toLowerCase() + '.js';
             }
@@ -139,6 +170,11 @@ module.exports = yeoman.generators.Base.extend({
                     this.template('style.less', pathStyleTheme);
                     this.template('spec-widget.js', pathSpecWidget);
                     this.template('spec.js', pathSpec);
+                    _appendJsRef();
+                    _appendStyleBaseRef();
+                    _appendStyleThemeRef();
+                    _appendSpecRef('widget');
+                    _appendSpecRef();
                     break;
                 case "Composite":
                     this.template('widget-composite.js', pathJs);
@@ -146,6 +182,11 @@ module.exports = yeoman.generators.Base.extend({
                     this.template('style.less', pathStyleTheme);
                     this.template('spec-widget.js', pathSpecWidget);
                     this.template('spec.js', pathSpec);
+                    _appendJsRef();
+                    _appendStyleBaseRef();
+                    _appendStyleThemeRef();
+                    _appendSpecRef('widget');
+                    _appendSpecRef();
                     break;
                case "Container":
                     this.template('widget-container.js', pathJs);
@@ -154,6 +195,12 @@ module.exports = yeoman.generators.Base.extend({
                     this.template('spec-widget.js', pathSpecWidget);
                     this.template('spec-container.js', pathSpecWidget);
                     this.template('spec.js', pathSpec);
+                    _appendJsRef();
+                    _appendStyleBaseRef();
+                    _appendStyleThemeRef();
+                    _appendSpecRef('widget');
+                    _appendSpecRef('container');
+                    _appendSpecRef();
                     break;
                 case "Layout":
                     this.template('widget-layout.js', pathJs);
@@ -161,10 +208,17 @@ module.exports = yeoman.generators.Base.extend({
                     this.template('spec-widget.js', pathSpecWidget);
                     this.template('spec-layout.js', pathSpecWidget);
                     this.template('spec.js', pathSpec);
+                    _appendJsRef();
+                    _appendStyleBaseRef();
+                    _appendSpecRef('widget');
+                    _appendSpecRef('layout');
+                    _appendSpecRef();
                     break;
                 case "NonVisual":
                     this.template('widget-nonvisual.js', pathJs);
                     this.template('spec.js', pathSpec);
+                    _appendJsRef();
+                    _appendSpecRef();
                     break;
                 case "DataView":
                     throw "Not implemented yet"; // TODO

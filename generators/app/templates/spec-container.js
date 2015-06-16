@@ -22,8 +22,8 @@ describe("photonui.<%= props.widgetName %> (container)", function() {
         expect(this.c1.containerNode instanceof HTMLElement).toBeTruthy();
     });
 
-    it("has the 'photonui-container' class on its outer HTML", function() {
-        expect(this.c1.html.className).toContain("photonui-container");
+    it("has the 'photonui-container' class on its conainer HTML node", function() {
+        expect(this.c1.containerNode.className).toContain("photonui-container");
     });
 
     it("can have a child widget", function() {

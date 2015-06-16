@@ -205,11 +205,13 @@ module.exports = yeoman.generators.Base.extend({
                 case "Layout":
                     this.template('widget-layout.js', pathJs);
                     this.template('style.less', pathStyleBase);
+                    this.template('style.less', pathStyleTheme);
                     this.template('spec-widget.js', pathSpecWidget);
                     this.template('spec-layout.js', pathSpecLayout);
                     this.template('spec.js', pathSpec);
                     _appendJsRef();
                     _appendStyleBaseRef();
+                    _appendStyleThemeRef();
                     _appendSpecRef('widget');
                     _appendSpecRef('layout');
                     _appendSpecRef();

@@ -84,18 +84,7 @@ var <%= props.widgetName %> = <%= props.widgetSuperClass %>.$extend({
      * @readOnly
      */
     getHtml: function() {
-        return this.__html.div;
-    },
-
-    /**
-     * HTML Element that contain the child widget HTML.
-     *
-     * @property containerNode
-     * @type HTMLElement
-     * @readOnly
-     */
-    getContainerNode: function() {
-        return this.__html.contentDiv;
+        return this.__html.ul;
     },
 
 

@@ -1,5 +1,9 @@
 # PhotonUI Widget Generator
 
+[ ![NPM Version](http://img.shields.io/npm/v/generator-photonui-widget.svg?style=flat) ](https://www.npmjs.com/package/generator-photonui-widget)
+[ ![License](http://img.shields.io/npm/l/generator-photonui-widget.svg?style=flat) ](http://opensource.org/licenses/MIT)
+
+
 Welcome to the [Yeoman](http://yeoman.io) PhotonUI widget generator.
 
 
@@ -25,6 +29,6 @@ that's it
 
 ## Links
 
-* [PhotonUi](http://wanadev.github.io/PhotonUI/)
+* [PhotonUI](http://wanadev.github.io/PhotonUI/)
 * [Yeoman](http://yeoman.io)
 

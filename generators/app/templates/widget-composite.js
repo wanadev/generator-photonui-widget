@@ -36,9 +36,7 @@
  * @namespace photonui
  */
 
-
 var <%= props.widgetSuperClass %> = require("<%= superClassPath %>");
-
 
 /**
  * <%= props.widgetDesc %>
@@ -67,14 +65,11 @@ var <%= props.widgetName %> = <%= props.widgetSuperClass %>.$extend({
         // TODO Constructor code here
     },
 
-
     //////////////////////////////////////////
     // Properties and Accessors             //
     //////////////////////////////////////////
 
-
     // ====== Public properties ======
-
 
     /**
      * Html outer element of the widget (if any).
@@ -88,26 +83,19 @@ var <%= props.widgetName %> = <%= props.widgetSuperClass %>.$extend({
         return this.__html.div;
     },
 
-
     // ====== Private properties ======
 
-
     // TODO Private property here
-
 
     //////////////////////////////////////////
     // Methods                              //
     //////////////////////////////////////////
 
-
     // ====== Public methods ======
-
 
     // TODO Public methods here
 
-
     // ====== Private methods ======
-
 
     /**
      * Build the widget HTML.
@@ -130,15 +118,11 @@ var <%= props.widgetName %> = <%= props.widgetSuperClass %>.$extend({
         // TODO
     },
 
-
     //////////////////////////////////////////
     // Internal Events Callbacks            //
     //////////////////////////////////////////
 
-
     // TODO Internal events callback here
 });
 
-
 module.exports = <%= props.widgetName %>;
-

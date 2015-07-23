@@ -36,9 +36,7 @@
  * @namespace photonui
  */
 
-
 var Base = require("../base.js");
-
 
 /**
  * <%= props.widgetDesc %>
@@ -65,49 +63,35 @@ var <%= props.widgetName %> = Base.$extend({
         // TODO Constructor code here
     },
 
-
     //////////////////////////////////////////
     // Properties and Accessors             //
     //////////////////////////////////////////
 
-
     // ====== Public properties ======
-
 
     // TODO Public property here
 
-
     // ====== Private properties ======
 
-
     // TODO Private property here
-
 
     //////////////////////////////////////////
     // Methods                              //
     //////////////////////////////////////////
 
-
     // ====== Public methods ======
-
 
     // TODO Public methods here
 
-
     // ====== Private methods ======
 
-
     // TODO Private methods here
-
 
     //////////////////////////////////////////
     // Internal Events Callbacks            //
     //////////////////////////////////////////
 
-
     // TODO Internal events callback here
 });
 
-
 module.exports = <%= props.widgetName %>;
-

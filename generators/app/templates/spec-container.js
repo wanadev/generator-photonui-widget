@@ -2,31 +2,31 @@
 // This file was auto-generated and may not be modified
 //
 
-describe("photonui.<%= props.widgetName %> (container)", function() {
+describe("photonui.<%= props.widgetName %> (container)", function () {
 
-    beforeEach(function() {
+    beforeEach(function () {
         this.c1 = new photonui.<%= props.widgetName %>();
         this.c2 = new photonui.<%= props.widgetName %>();
         this.w1 = new DummyWidget();
         this.w2 = new DummyWidget();
     });
 
-    afterEach(function() {
+    afterEach(function () {
         this.c1.destroy();
         this.c2.destroy();
         this.w1.destroy();
         this.w2.destroy();
     });
 
-    it("has a container HTML element", function() {
+    it("has a container HTML element", function () {
         expect(this.c1.containerNode instanceof HTMLElement).toBeTruthy();
     });
 
-    it("has the 'photonui-container' class on its conainer HTML node", function() {
+    it("has the 'photonui-container' class on its conainer HTML node", function () {
         expect(this.c1.containerNode.className).toContain("photonui-container");
     });
 
-    it("can have a child widget", function() {
+    it("can have a child widget", function () {
         this.c1.child = this.w1;
 
         expect(this.c1.child).toBe(this.w1);
@@ -34,14 +34,14 @@ describe("photonui.<%= props.widgetName %> (container)", function() {
         expect(this.c1.containerNode.childNodes[0]).toBe(this.w1.html);
     });
 
-    it("can update its child parent", function() {
+    it("can update its child parent", function () {
         this.c1.child = this.w1;
 
         expect(this.w1.parent).toBe(this.c1);
         expect(this.w1.parentName).toBe(this.c1.name);
     });
 
-    it("can have its child removed", function() {
+    it("can have its child removed", function () {
         this.c1.child = this.w1;
         this.c1.child = null;
 
@@ -51,7 +51,7 @@ describe("photonui.<%= props.widgetName %> (container)", function() {
         expect(this.c1.containerNode.childNodes.length).toEqual(0);
     });
 
-    it("can remove its child", function() {
+    it("can remove its child", function () {
         this.c1.child = this.w1;
         this.c1.removeChild(this.w1);
 
@@ -61,7 +61,7 @@ describe("photonui.<%= props.widgetName %> (container)", function() {
         expect(this.c1.containerNode.childNodes.length).toEqual(0);
     });
 
-    it("can have its child changed", function() {
+    it("can have its child changed", function () {
         this.c1.child = this.w1;
         this.c1.child = this.w2;
 
@@ -72,7 +72,7 @@ describe("photonui.<%= props.widgetName %> (container)", function() {
         expect(this.c1.containerNode.childNodes[0]).toBe(this.w2.html);
     });
 
-    it("can have its child reparented", function() {
+    it("can have its child reparented", function () {
         this.c1.child = this.w1;
         this.c2.child = this.w1;
 

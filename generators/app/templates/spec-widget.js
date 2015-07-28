@@ -2,35 +2,35 @@
 // This file was auto-generated and may not be modified
 //
 
-describe("photonui.<%= props.widgetName %> (widget)", function() {
+describe("photonui.<%= props.widgetName %> (widget)", function () {
 
-    beforeEach(function() {
+    beforeEach(function () {
         this.c = new DummyContainer();
         this.w = new photonui.<%= props.widgetName %>();
     });
 
-    afterEach(function() {
+    afterEach(function () {
         this.c.destroy();
         this.w.destroy();
     });
 
-    it("has a name", function() {
+    it("has a name", function () {
         expect(this.w.name).not.toBeUndefined();
     });
 
-    it("has HTML element", function() {
+    it("has HTML element", function () {
         expect(this.w.html instanceof HTMLElement).toBeTruthy();
     });
 
-    it("has the 'photonui-widget' class on its outer HTML", function() {
+    it("has the 'photonui-widget' class on its outer HTML", function () {
         expect(this.w.html.className).toContain("photonui-widget");
     });
 
-    it("has the 'photonui-<%= props.widgetName.toLowerCase() %>' class on its outer HTML", function() {
+    it("has the 'photonui-<%= props.widgetName.toLowerCase() %>' class on its outer HTML", function () {
         expect(this.w.html.className).toContain("photonui-<%= props.widgetName.toLowerCase() %>");
     });
 
-    it("can be unparented", function() {
+    it("can be unparented", function () {
         this.c.child = this.w;
         this.w.unparent();
 
@@ -39,7 +39,7 @@ describe("photonui.<%= props.widgetName %> (widget)", function() {
         expect(this.c.containerNode.childNodes.length).toEqual(0);
     });
 
-    it("is unparented when it is destroyed", function() {
+    it("is unparented when it is destroyed", function () {
         this.c.child = this.w;
         this.w.destroy();
 
@@ -48,7 +48,7 @@ describe("photonui.<%= props.widgetName %> (widget)", function() {
         expect(this.c.containerNode.childNodes.length).toEqual(0);
     });
 
-    it("can be inserted and removed from any html element", function() {
+    it("can be inserted and removed from any html element", function () {
         var div = document.createElement("div");
 
         photonui.domInsert(this.w, div);
@@ -58,7 +58,7 @@ describe("photonui.<%= props.widgetName %> (widget)", function() {
         expect(div.childNodes).not.toContain(this.w.html);
     });
 
-    it("have its name as id of its HTML element", function() {
+    it("have its name as id of its HTML element", function () {
         expect(this.w.html.id).toEqual(this.w.name);
     });
 

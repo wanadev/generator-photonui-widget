@@ -55,7 +55,7 @@ var Base = require("../base.js");
 var <%= props.widgetName %> = Base.$extend({
 
     // Constructor
-    __init__: function(params) {
+    __init__: function (params) {
         this._registerWEvents([]);
         this.$super(params);
         this._updateProperties([]);

@@ -1,18 +1,18 @@
-describe("photonui.<%= props.widgetName %>", function() {
+describe("photonui.<%= props.widgetName %>", function () {
 
-    beforeAll(function() {
+    beforeAll(function () {
         // ...
     });
 
-    beforeEach(function() {
+    beforeEach(function () {
         // ...
     });
 
-    afterEach(function() {
+    afterEach(function () {
         // ...
     });
 
-    // it("<DESCRIPTION>", function() {
+    // it("<DESCRIPTION>", function () {
     //     // EXPECTATIONS
     // });
 

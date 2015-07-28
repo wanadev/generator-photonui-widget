@@ -1,6 +1,6 @@
 {
   "name": "generator-photonui-widget",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Yeoman PhotonUI widget generator",
   "license": "MIT",
   "main": "app/index.js",

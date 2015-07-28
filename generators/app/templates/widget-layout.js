@@ -46,7 +46,7 @@ var <%= props.widgetSuperClass %> = require("<%= superClassPath %>");
  *
  *   * <WEVENT NAME>:
  *      - description: <WEVENT DESCRIPTION>
- *      - callback:    <CALLBACK SIGNATURE (function(widget, ...))>
+ *      - callback:    <CALLBACK SIGNATURE (function (widget, ...))>
  *
  * @class <%= props.widgetName %>
  * @constructor
@@ -56,7 +56,7 @@ var <%= props.widgetSuperClass %> = require("<%= superClassPath %>");
 var <%= props.widgetName %> = <%= props.widgetSuperClass %>.$extend({
 
     // Constructor
-    __init__: function(params) {
+    __init__: function (params) {
         this._registerWEvents([]);
         this.$super(params);
         this._updateProperties([]);
@@ -78,7 +78,7 @@ var <%= props.widgetName %> = <%= props.widgetSuperClass %>.$extend({
      * @default null
      * @readOnly
      */
-    getHtml: function() {
+    getHtml: function () {
         return this.__html.ul;
     },
 
@@ -102,7 +102,7 @@ var <%= props.widgetName %> = <%= props.widgetSuperClass %>.$extend({
      * @method _buildHtml
      * @private
      */
-    _buildHtml: function() {
+    _buildHtml: function () {
         this.__html.ul = document.createElement("ul");
         this.__html.ul.className = "photonui-widget photonui-<%= props.widgetName.toLowerCase() %>";
     },
@@ -113,7 +113,7 @@ var <%= props.widgetName %> = <%= props.widgetSuperClass %>.$extend({
      * @method _updateLayout
      * @private
      */
-    _updateLayout: function() {
+    _updateLayout: function () {
         Helpers.cleanNode(this.__html.ul);
 
         var children = this.children;  // Cache for perf

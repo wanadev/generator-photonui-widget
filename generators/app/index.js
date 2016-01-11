@@ -129,14 +129,14 @@ module.exports = yeoman.generators.Base.extend({
                 var ref = '@import "' + that.props.widgetType.toLowerCase() + '/' + that.props.widgetName.toLowerCase() + '.less";';
                 var content = that.read(that.destinationRoot() + '/less/base/photonui-base.less');
                 content = content.replace(/\/\* *\[generator\] *\*\/\r?\n?/, ref + '\n/* [generator] */\n');
-                that.write(that.destinationRoot() + '/less/base/photonui-base.less', content);
+                that.write(that.destinationRoot() + '/less/base/imports.less', content);
             }
 
             function _appendStyleThemeRef() {
                 var ref = '@import "' + that.props.widgetType.toLowerCase() + '/' + that.props.widgetName.toLowerCase() + '.less";';
                 var content = that.read(that.destinationRoot() + '/less/theme-particle/photonui-theme-particle.less');
                 content = content.replace(/\/\* *\[generator\] *\*\/\r?\n?/, ref + '\n/* [generator] */\n');
-                that.write(that.destinationRoot() + '/less/theme-particle/photonui-theme-particle.less', content);
+                that.write(that.destinationRoot() + '/less/theme-particle/imports.less', content);
             }
 
             function _appendSpecRef(suffix) {
